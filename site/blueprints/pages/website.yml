@@ -1,0 +1,16 @@
+title: Website
+columns:
+  - width: 1/1
+    fields:
+      url:
+        label: Website URL
+  - width: 1/2
+    sections:
+      frontend:
+        type: files
+        template: frontend
+  - width: 1/2
+    sections:
+      backend:
+        type: files
+        template: backend

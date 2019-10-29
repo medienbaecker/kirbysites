@@ -1,0 +1,7 @@
+label: Meta
+icon: cog
+fields:
+  description:
+    label: Meta Description
+    type: textarea
+    buttons: false

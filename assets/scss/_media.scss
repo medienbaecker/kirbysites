@@ -1,0 +1,32 @@
+@media screen and (max-width: 1700px) { 
+	.websites {
+		grid-template-columns: 1fr 1fr;
+	} 
+}
+
+@media screen and (max-width: 1200px) {
+	body {
+		margin: 2rem;
+	}
+	.websites {
+		grid-gap: 2rem;
+	}
+}
+
+@media screen and (max-width: 1050px) {
+	.websites {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	html {
+		font-size: 15px;
+	}
+	header {
+		a.submit svg {
+			width: 15px;
+			top: -3px;
+		}
+	}
+}

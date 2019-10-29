@@ -1,0 +1,176 @@
+html {
+    font-family: -apple-system,BlinkMacSystemFont,sans-serif;
+    background: black;
+    color: white;
+    font-size: 25px;
+}
+
+body {
+    margin: 2rem 4rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    a {
+        &.submit {
+            display: block;
+            color: rgba(white, .5);
+            svg {
+                display: inline-block;
+                vertical-align: top;
+                margin-right: 5px;
+                position: relative;
+                top: 2px;
+                opacity: .5;
+            }
+            &:hover {
+                color: white;
+                svg {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+main.text {
+    font-size: .8rem;
+    max-width: 60ch;
+    h1 {
+        font-size: 1rem;
+    }
+    h2, h3, h4 {
+        font-size: 1em;
+    }
+    a {
+        text-decoration: underline;
+    }
+}
+
+.websites {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4rem;
+    .website {
+        .screenshot {
+            a {
+                display: block;
+                position: relative;
+                overflow: hidden;
+                img {
+                    display: none;
+                    width: 100%;
+                    transition: all .25s ease-in-out;
+                    &:first-child {
+                        display: block;
+                    }
+                }
+                &::after {
+                    content: '';
+                    background-color: rgba(black, .5);
+                    background-image: url(../images/open.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    opacity: 0;
+                    transition: all .25s ease-in-out;
+                }
+                &.backend {
+                    display: none;
+                    &::after {
+                        background-image: url(../images/view.svg);
+                    }
+                }
+                &:hover {
+                    img {
+                        filter: blur(3px);
+                        transform: scale(.98);
+                    }
+                    &::after {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+        .title {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            color: rgba(white, .5);
+            span {
+                user-select: none;
+                cursor: pointer;
+                &.frontend {
+                    color: white;
+                    flex-grow: 1;
+                }
+                &.backend {
+                    text-decoration: underline;
+                    margin-left: 2px;
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+        &.backend-open {
+            .screenshot {
+                a {
+                    &.frontend {
+                        display: none;
+                    }
+                    &.backend {
+                        display: block;
+                    }
+                }
+            }
+            .title {
+                span {
+                    &.frontend {
+                        color: inherit;
+                        text-decoration: underline;
+                        &:hover {
+                            color: white;
+                        }
+                    }
+                    &.backend {
+                        color: white;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+    color: rgba(white, .5);
+    a {
+        &:hover, &.open {
+            color: white;
+        }
+    }
+    nav {
+        a {
+            margin-left: 1rem;
+        }
+    }
+}
+
+
+@import "media";

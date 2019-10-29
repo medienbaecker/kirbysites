@@ -1,0 +1,153 @@
+html {
+  font-family: -apple-system,BlinkMacSystemFont,sans-serif;
+  background: black;
+  color: white;
+  font-size: 25px; }
+
+body {
+  margin: 2rem 4rem; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+header {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 4rem; }
+  header a.submit {
+    display: block;
+    color: rgba(255, 255, 255, 0.5); }
+    header a.submit svg {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 5px;
+      position: relative;
+      top: 2px;
+      opacity: .5; }
+    header a.submit:hover {
+      color: white; }
+      header a.submit:hover svg {
+        opacity: 1; }
+
+main.text {
+  font-size: .8rem;
+  max-width: 60ch; }
+  main.text h1 {
+    font-size: 1rem; }
+  main.text h2, main.text h3, main.text h4 {
+    font-size: 1em; }
+  main.text a {
+    text-decoration: underline; }
+
+.websites {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 4rem; }
+  .websites .website .screenshot a {
+    display: block;
+    position: relative;
+    overflow: hidden; }
+    .websites .website .screenshot a img {
+      display: none;
+      width: 100%;
+      -webkit-transition: all .25s ease-in-out;
+      transition: all .25s ease-in-out; }
+      .websites .website .screenshot a img:first-child {
+        display: block; }
+    .websites .website .screenshot a::after {
+      content: '';
+      background-color: rgba(0, 0, 0, 0.5);
+      background-image: url(../images/open.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      -webkit-transition: all .25s ease-in-out;
+      transition: all .25s ease-in-out; }
+    .websites .website .screenshot a.backend {
+      display: none; }
+      .websites .website .screenshot a.backend::after {
+        background-image: url(../images/view.svg); }
+    .websites .website .screenshot a:hover img {
+      -webkit-filter: blur(3px);
+              filter: blur(3px);
+      -webkit-transform: scale(0.98);
+              transform: scale(0.98); }
+    .websites .website .screenshot a:hover::after {
+      opacity: 1;
+      -webkit-transform: scale(1);
+              transform: scale(1); }
+  .websites .website .title {
+    margin-top: 1rem;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    color: rgba(255, 255, 255, 0.5); }
+    .websites .website .title span {
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+      cursor: pointer; }
+      .websites .website .title span.frontend {
+        color: white;
+        -webkit-box-flex: 1;
+                flex-grow: 1; }
+      .websites .website .title span.backend {
+        text-decoration: underline;
+        margin-left: 2px; }
+        .websites .website .title span.backend:hover {
+          color: white; }
+  .websites .website.backend-open .screenshot a.frontend {
+    display: none; }
+  .websites .website.backend-open .screenshot a.backend {
+    display: block; }
+  .websites .website.backend-open .title span.frontend {
+    color: inherit;
+    text-decoration: underline; }
+    .websites .website.backend-open .title span.frontend:hover {
+      color: white; }
+  .websites .website.backend-open .title span.backend {
+    color: white;
+    text-decoration: none; }
+
+footer {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  margin-top: 4rem;
+  color: rgba(255, 255, 255, 0.5); }
+  footer a:hover, footer a.open {
+    color: white; }
+  footer nav a {
+    margin-left: 1rem; }
+
+@media screen and (max-width: 1700px) {
+  .websites {
+    grid-template-columns: 1fr 1fr; } }
+
+@media screen and (max-width: 1200px) {
+  body {
+    margin: 2rem; }
+  .websites {
+    grid-gap: 2rem; } }
+
+@media screen and (max-width: 1050px) {
+  .websites {
+    grid-template-columns: 1fr; } }
+
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 15px; }
+  header a.submit svg {
+    width: 15px;
+    top: -3px; } }

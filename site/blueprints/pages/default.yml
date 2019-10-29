@@ -1,0 +1,10 @@
+title: Default
+tabs:
+  main:
+    label: Main
+    icon: page
+    fields:
+      text:
+        type: textarea
+  meta:
+    extends: tabs/meta
