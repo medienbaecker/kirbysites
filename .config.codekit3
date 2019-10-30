@@ -238,6 +238,25 @@
 		"oAP": "/build/media",
 		"oF": 0
 		},
+	"/README.md": {
+		"cB": 0,
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/README.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
 	"/site/accounts/VqrdKoBj/.htpasswd": {
 		"cB": 0,
 		"ft": 8192,
@@ -350,6 +369,22 @@
 		"oAP": "/site/sessions/1572280303.5c12810139dcb73d3ecc.sess",
 		"oF": 0
 		},
+	"/site/sessions/1572466149.4996b72cde61e59d0d7e.sess": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/site/sessions/1572466149.4996b72cde61e59d0d7e.sess",
+		"oF": 0
+		},
+	"/site/sessions/1572466149.fc6878cbeac0719147df.sess": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/site/sessions/1572466149.fc6878cbeac0719147df.sess",
+		"oF": 0
+		},
 	"/site/snippets/bottom.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -437,7 +472,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 565095408.00331104,
-	"displayValue": "_Kirby-Panels",
+	"displayValue": "Kirby-Panels",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "meme-facepalm",
 	"iconImageWasSetByUser": 0
