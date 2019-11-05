@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <?php if($page->isHomePage()): ?>
-    <title><?= $site->title() ?></title>
+    <title><?= $site->title() ?> | Frontend/Backend Inspiration</title>
   <?php else: ?>
     <title><?= $site->title() ?> | <?= $page->title() ?></title>
   <?php endif ?>
