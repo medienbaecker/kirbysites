@@ -5,7 +5,7 @@
 			<div class="screenshot">
 
 				<?php $frontend = $p->images()->template("frontend")->sortBy('sort', 'asc')->first() ?>
-				<a href="<?= $p->content()->url() ?>" class="frontend open">
+				<a href="<?= $p->content()->url() ?>" title="<?= $p->title() ?>" class="frontend open">
 					<?= $frontend->crop(800, 600, "top") ?>
 				</a>
 
