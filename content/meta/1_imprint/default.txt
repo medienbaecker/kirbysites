@@ -9,7 +9,7 @@ Text:
 ## Information pursuant to § 5 TMG
 
 Thomas Günther  
-Medienbäcker  
+(link: https://www.medienbaecker.com text: Medienbäcker target: _blank)
 Burgstr. 49  
 72285 Pfalzgrafenweiler
 Germany
