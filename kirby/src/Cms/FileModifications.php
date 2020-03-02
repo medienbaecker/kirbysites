@@ -18,7 +18,7 @@ trait FileModifications
     /**
      * Blurs the image by the given amount of pixels
      *
-     * @param boolean $pixels
+     * @param bool $pixels
      * @return \Kirby\Cms\FileVersion|\Kirby\Cms\File
      */
     public function blur($pixels = true)
@@ -39,8 +39,8 @@ trait FileModifications
     /**
      * Crops the image by the given width and height
      *
-     * @param integer $width
-     * @param integer $height
+     * @param int $width
+     * @param int $height
      * @param string|array $options
      * @return \Kirby\Cms\FileVersion|\Kirby\Cms\File
      */
@@ -69,9 +69,29 @@ trait FileModifications
     }
 
     /**
+     * Alias for File::bw()
+     *
+     * @return \Kirby\Cms\FileVersion|\Kirby\Cms\File
+     */
+    public function grayscale()
+    {
+        return $this->thumb(['grayscale' => true]);
+    }
+
+    /**
+     * Alias for File::bw()
+     *
+     * @return \Kirby\Cms\FileVersion|\Kirby\Cms\File
+     */
+    public function greyscale()
+    {
+        return $this->thumb(['grayscale' => true]);
+    }
+
+    /**
      * Sets the JPEG compression quality
      *
-     * @param integer $quality
+     * @param int $quality
      * @return \Kirby\Cms\FileVersion|\Kirby\Cms\File
      */
     public function quality(int $quality)
@@ -83,9 +103,9 @@ trait FileModifications
      * Resizes the file with the given width and height
      * while keeping the aspect ratio.
      *
-     * @param integer $width
-     * @param integer $height
-     * @param integer $quality
+     * @param int $width
+     * @param int $height
+     * @param int $quality
      * @return \Kirby\Cms\FileVersion|\Kirby\Cms\File
      */
     public function resize(int $width = null, int $height = null, int $quality = null)

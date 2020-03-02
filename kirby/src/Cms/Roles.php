@@ -2,8 +2,6 @@
 
 namespace Kirby\Cms;
 
-use Kirby\Toolkit\Dir;
-
 /**
  * Extension of the Collection class that
  * introduces `Roles::factory()` to convert an
@@ -29,8 +27,8 @@ class Roles extends Collection
      */
     public function canBeChanged()
     {
-        if ($user = App::instance()->user()) {
-            return $this->filter(function ($role) use ($user) {
+        if (App::instance()->user()) {
+            return $this->filter(function ($role) {
                 $newUser = new User([
                     'email' => 'test@getkirby.com',
                     'role'  => $role->id()
@@ -52,8 +50,8 @@ class Roles extends Collection
      */
     public function canBeCreated()
     {
-        if ($user = App::instance()->user()) {
-            return $this->filter(function ($role) use ($user) {
+        if (App::instance()->user()) {
+            return $this->filter(function ($role) {
                 $newUser = new User([
                     'email' => 'test@getkirby.com',
                     'role'  => $role->id()
@@ -116,12 +114,14 @@ class Roles extends Collection
 
         // load roles from directory
         if ($root !== null) {
-            foreach (Dir::read($root) as $filename) {
+            foreach (glob($root . '/*.yml') as $file) {
+                $filename = basename($file);
+
                 if ($filename === 'default.yml') {
                     continue;
                 }
 
-                $role = Role::load($root . '/' . $filename, $inject);
+                $role = Role::load($file, $inject);
                 $roles->set($role->id(), $role);
             }
         }

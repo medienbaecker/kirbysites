@@ -16,6 +16,12 @@ return [
     ],
     'props' => [
         /**
+         * Enables/disables reverse sorting
+         */
+        'flip' => function (bool $flip = false) {
+            return $flip;
+        },
+        /**
          * Image options to control the source and look of file previews
          */
         'image' => function ($image = null) {
@@ -83,6 +89,11 @@ return [
                 $files = $files->sortBy('sort', 'asc', 'filename', 'asc');
             }
 
+            // flip
+            if ($this->flip === true) {
+                $files = $files->flip();
+            }
+
             // apply the default pagination
             $files = $files->paginate([
                 'page'  => $this->page,
@@ -103,14 +114,16 @@ return [
 
                 $data[] = [
                     'dragText' => $file->dragText('auto', $dragTextAbsolute),
+                    'extension' => $file->extension(),
                     'filename' => $file->filename(),
                     'id'       => $file->id(),
-                    'text'     => $file->toString($this->text),
-                    'info'     => $file->toString($this->info ?? false),
                     'icon'     => $file->panelIcon($image),
                     'image'    => $image,
+                    'info'     => $file->toString($this->info ?? false),
                     'link'     => $file->panelUrl(true),
+                    'mime'     => $file->mime(),
                     'parent'   => $file->parent()->panelPath(),
+                    'text'     => $file->toString($this->text),
                     'url'      => $file->url(),
                 ];
             }
@@ -165,6 +178,10 @@ return [
             }
 
             if ($this->sortBy !== null) {
+                return false;
+            }
+
+            if ($this->flip === true) {
                 return false;
             }
 
