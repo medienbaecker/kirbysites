@@ -69,6 +69,7 @@ main.text {
       -webkit-transform: perspective(1000px);
               transform: perspective(1000px); }
       .websites .website .screenshot .front_back .frontend {
+        display: block;
         position: relative;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden; }

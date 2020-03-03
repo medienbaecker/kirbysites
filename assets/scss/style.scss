@@ -75,6 +75,7 @@ main.text {
                 transform-style: preserve-3d;
                 transform: perspective(1000px);
                 .frontend {
+                    display: block;
                     position: relative;
                     backface-visibility: hidden;
                 }
