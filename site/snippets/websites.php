@@ -23,7 +23,7 @@
 
 			<div class="title">
 				
-				<a class="frontend" href="<?= $p->content()->url() ?>"><?= parse_url($p->content()->url())["host"] ?></a>
+				<a class="frontend" title="<?= $p->title() ?>" href="<?= $p->content()->url() ?>"><?= parse_url($p->content()->url())["host"] ?></a>
 
 				<a class="heart <?php e($p->hasLiked(), 'has_liked') ?>" href="<?= $p->url() ?>/like/toggle"><span><?= $p->likeCount() ?></span><?= svg('assets/images/heart.svg') ?></a>
 
