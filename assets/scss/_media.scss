@@ -29,4 +29,20 @@
 			top: -3px;
 		}
 	}
+	.websites {
+		.website {
+			.title {
+				a.frontend {
+					border-width: 1px;
+				} 
+				a.heart {
+					svg {
+						width: 16px;
+						height: 16px;
+						top: -1px;
+					}
+				}
+			}
+		}
+	} 
 }

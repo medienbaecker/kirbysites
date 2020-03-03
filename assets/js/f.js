@@ -13,7 +13,8 @@ document.querySelectorAll(".website").forEach(function(website) {
                     w    : img.getAttribute("data-size").split("x")[0],
                     h    : img.getAttribute("data-size").split("x")[1],
                     msrc : img.src,
-                    el   : img
+                    el   : img,
+                    title: website.querySelector('.title .frontend').outerHTML
                 }
                 items.push(item);
             });
@@ -48,7 +49,7 @@ document.querySelectorAll(".website").forEach(function(website) {
             return response.json();
         })
         .then((data) => {
-            console.log(this.querySelector("span").innerText = data.likeCount);
+            this.querySelector("span").innerText = data.likeCount;
             if(data.hasLiked) {
                 this.classList.add('has_liked');
             }

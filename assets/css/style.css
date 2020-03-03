@@ -11,7 +11,7 @@ a {
   color: inherit;
   text-decoration: none; }
 
-.pswp__counter {
+.pswp__counter, .pswp__caption {
   font-size: .8rem; }
 
 header {
@@ -20,20 +20,29 @@ header {
   -webkit-box-pack: justify;
           justify-content: space-between;
   margin-bottom: 4rem; }
-  header a.submit {
-    display: block;
-    color: rgba(255, 255, 255, 0.5); }
-    header a.submit svg {
-      display: inline-block;
-      vertical-align: top;
-      margin-right: 5px;
-      position: relative;
-      top: 2px;
-      opacity: .5; }
-    header a.submit:hover {
-      color: white; }
-      header a.submit:hover svg {
-        opacity: 1; }
+  header a {
+    -webkit-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out; }
+    header a.submit {
+      display: block;
+      color: gray; }
+      header a.submit svg {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 5px;
+        position: relative;
+        top: 2px;
+        -webkit-transition: -webkit-transform .25s ease-in-out;
+        transition: -webkit-transform .25s ease-in-out;
+        transition: transform .25s ease-in-out;
+        transition: transform .25s ease-in-out, -webkit-transform .25s ease-in-out; }
+        header a.submit svg path {
+          stroke: currentColor; }
+      header a.submit:hover {
+        color: white; }
+        header a.submit:hover svg {
+          -webkit-transform: rotate(90deg);
+                  transform: rotate(90deg); }
 
 main.text {
   font-size: .8rem;
@@ -155,8 +164,11 @@ footer {
           justify-content: space-between;
   margin-top: 4rem;
   color: rgba(255, 255, 255, 0.5); }
-  footer a:hover, footer a.open {
-    color: white; }
+  footer a {
+    -webkit-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out; }
+    footer a:hover, footer a.open {
+      color: white; }
   footer nav a {
     margin-left: 1rem; }
 
@@ -179,4 +191,10 @@ footer {
     font-size: 15px; }
   header a.submit svg {
     width: 15px;
-    top: -3px; } }
+    top: -3px; }
+  .websites .website .title a.frontend {
+    border-width: 1px; }
+  .websites .website .title a.heart svg {
+    width: 16px;
+    height: 16px;
+    top: -1px; } }

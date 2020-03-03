@@ -14,7 +14,7 @@ a {
     text-decoration: none;
 }
 
-.pswp__counter {
+.pswp__counter, .pswp__caption {
     font-size: .8rem;
 }
 
@@ -23,21 +23,25 @@ header {
     justify-content: space-between;
     margin-bottom: 4rem;
     a {
+        transition: all .25s ease-in-out;
         &.submit {
             display: block;
-            color: rgba(white, .5);
+            color: darken(white, 50);
             svg {
                 display: inline-block;
                 vertical-align: top;
                 margin-right: 5px;
                 position: relative;
                 top: 2px;
-                opacity: .5;
+                transition: transform .25s ease-in-out;
+                path {
+                    stroke: currentColor;
+                }
             }
             &:hover {
                 color: white;
                 svg {
-                    opacity: 1;
+                    transform: rotate(90deg);
                 }
             }
         }
@@ -194,6 +198,7 @@ footer {
     margin-top: 4rem;
     color: rgba(white, .5);
     a {
+        transition: all .25s ease-in-out;
         &:hover, &.open {
             color: white;
         }
