@@ -14,6 +14,10 @@ a {
     text-decoration: none;
 }
 
+.pswp__counter {
+    font-size: .8rem;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -60,46 +64,60 @@ main.text {
     grid-gap: 4rem;
     .website {
         .screenshot {
-            a {
-                display: block;
-                position: relative;
-                overflow: hidden;
-                img {
-                    display: none;
-                    width: 100%;
-                    transition: all .25s ease-in-out;
-                    &:first-child {
-                        display: block;
-                    }
+            position: relative;
+            cursor: pointer;
+            .front_back {
+                transition: all .25s ease-in-out;
+                transform-style: preserve-3d;
+                pointer-events: none;
+                transform: perspective(1000px);
+                .frontend {
+                    position: relative;
+                    backface-visibility: hidden;
                 }
-                &::after {
-                    content: '';
-                    background-color: rgba(black, .5);
-                    background-image: url(../images/open.svg);
-                    background-position: center;
-                    background-repeat: no-repeat;
+                .backend {
                     position: absolute;
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
                     left: 0;
-                    opacity: 0;
-                    transition: all .25s ease-in-out;
+                    top: 0;
+                    width: 100%;
+                    transform: rotateY(180deg);
+                    backface-visibility: hidden;
                 }
-                &.backend {
-                    display: none;
-                    &::after {
-                        background-image: url(../images/view.svg);
+                img {
+                    display: block;
+                    width: 100%;
+                    &.popup {
+                        display: none;
                     }
                 }
-                &:hover {
-                    img {
-                        filter: blur(3px);
-                        transform: scale(.98);
+            }
+            &:hover {
+                .front_back {
+                    transform: perspective(1000px) rotateY(-10deg) rotateX(-10deg);
+                }
+                & + .title {
+                    a.frontend {
+                        &:after {
+                            opacity: .33;
+                        }
                     }
-                    &::after {
-                        opacity: 1;
-                        transform: scale(1);
+                }
+            }
+            &:active {
+                .front_back {
+                    transition: all .1s ease-in-out;
+                    transform: perspective(1000px) rotateY(0deg) rotateX(-15deg) scale(0.95);
+                }
+            }
+            &.backend_open {
+                .front_back {
+                    transform: perspective(1000px) rotateY(-180deg);
+                }
+                & + .title {
+                    a.frontend {
+                        &:after {
+                            opacity: 1;
+                        }
                     }
                 }
             }
@@ -108,46 +126,61 @@ main.text {
             margin-top: 1rem;
             display: flex;
             justify-content: space-between;
-            color: rgba(white, .5);
-            span {
+            font-size: .8rem;
+            a {
                 user-select: none;
                 cursor: pointer;
                 &.frontend {
-                    color: white;
-                    flex-grow: 1;
+                    border-bottom: 2px solid transparent;
+                    transition: all .25s ease-in-out;
+                    &:after {
+                        content: '/panel';
+                        opacity: 0;
+                        transition: all .25s ease-in-out;
+                        margin-left: 1px;
+                        // font-weight: 300;
+                        position: absolute;
+                    }
+                    &:hover {
+                        border-color: currentColor;
+                    }
                 }
                 &.backend {
-                    text-decoration: underline;
                     margin-left: 2px;
+                    color: rgba(white, .5);
+                }
+                &.heart {
+                    color: rgba(white, .5);
+                    transition: all .25s ease-in-out;
+                    svg {
+                        display: inline-block;
+                        vertical-align: middle;
+                        position: relative;
+                        top: -2px;
+                        overflow: visible;
+                        margin-left: 5px;
+                        circle {
+                            fill: none;
+                            stroke: currentColor;
+                            stroke-width: 2px;
+                        }
+                        path {
+                            fill: currentColor;
+                        }
+                    }
                     &:hover {
                         color: white;
                     }
-                }
-            }
-        }
-        &.backend-open {
-            .screenshot {
-                a {
-                    &.frontend {
-                        display: none;
-                    }
-                    &.backend {
-                        display: block;
-                    }
-                }
-            }
-            .title {
-                span {
-                    &.frontend {
-                        color: inherit;
-                        text-decoration: underline;
-                        &:hover {
-                            color: white;
-                        }
-                    }
-                    &.backend {
+                    &.has_liked {
                         color: white;
-                        text-decoration: none;
+                        svg {
+                           circle {
+                               fill: currentColor;
+                           } 
+                           path {
+                               fill: black;
+                           }
+                        }
                     }
                 }
             }
