@@ -7,10 +7,10 @@
 
 				<div class="front_back">
 					<?php $frontend = $p->images()->template("frontend")->sortBy('sort', 'asc')->first() ?>
-					<div class="frontend">
-						<?= $frontend->crop(800, 600, "top") ?>
-					</div>
 					<?php $panels = $p->images()->template("backend")->sortBy('sort', 'asc') ?>
+					<a class="frontend" href="<?= $panels->first()->url() ?>">
+						<?= $frontend->crop(800, 600, "top") ?>
+					</a>
 					<div class="backend">
 						<?= $panels->first()->crop(800, 600, "top") ?>
 						<?php foreach($panels as $panel): ?>

@@ -2,7 +2,7 @@ var pswpElement = document.querySelectorAll('.pswp')[0];
 
 document.querySelectorAll(".website").forEach(function(website) {
 
-    website.querySelector(".screenshot").addEventListener('click', function() {
+    website.querySelector(".screenshot").addEventListener('click', function(e) {
         website.querySelector(".screenshot").classList.add('backend_open');
         setTimeout(function () {
             var index = 0;
@@ -39,6 +39,7 @@ document.querySelectorAll(".website").forEach(function(website) {
                 website.querySelector(".screenshot").classList.remove('backend_open');
             });
         }, 200);
+        e.preventDefault();
     });
 
     website.querySelector(".heart").addEventListener('click', function(e) {
