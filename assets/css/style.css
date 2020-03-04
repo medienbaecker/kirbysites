@@ -60,7 +60,9 @@ main.text {
   grid-gap: 4rem; }
   .websites .website .screenshot {
     position: relative;
-    cursor: pointer; }
+    cursor: pointer;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px); }
     .websites .website .screenshot .front_back {
       -webkit-transition: all .25s ease-in-out;
       transition: all .25s ease-in-out;
@@ -84,7 +86,8 @@ main.text {
                 backface-visibility: hidden; }
       .websites .website .screenshot .front_back img {
         display: block;
-        width: 100%; }
+        width: 100%;
+        border-radius: 2px; }
         .websites .website .screenshot .front_back img.popup {
           display: none; }
     .websites .website .screenshot:hover .front_back {
@@ -172,7 +175,7 @@ footer {
   footer nav a {
     margin-left: 1rem; }
 
-@media screen and (max-width: 1700px) {
+@media screen and (max-width: 1600px) {
   .websites {
     grid-template-columns: 1fr 1fr; } }
 

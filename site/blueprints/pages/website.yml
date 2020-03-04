@@ -14,3 +14,6 @@ columns:
       backend:
         type: files
         template: backend
+  - width: 1/1
+    fields:
+      likes: true
