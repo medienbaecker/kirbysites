@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
   <meta name="description" content="<?= $page->description()->or($site->description()) ?>" />
   <link rel="canonical" href="<?php echo $page->url() ?>">
-  <link rel="icon" href="<?= url('assets/images/favicon.png') ?>">
+  <link rel="icon" type="image/svg+xml" href="<?= url('assets/images/favicon.svg') ?>">
   <?php snippet('og') ?>
   <?= css(array(
     'assets/photoswipe/photoswipe.css',

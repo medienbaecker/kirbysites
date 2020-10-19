@@ -1,6 +1,15 @@
 <main class="websites">
 
-	<?php foreach($pages->listed() as $p): ?>
+	<?php
+		$websites = $pages->listed();
+		if(param("sort") == "likes") {
+			$websites = $websites->sortBy(function($page) {
+				return $page->likeCount();
+			}, 'desc');
+		}
+	?>
+
+	<?php foreach($websites as $p): ?>
 		<div class="website" id="<?= $p->uid() ?>">
 
 			<div class="screenshot">
@@ -9,12 +18,12 @@
 					<?php $frontend = $p->images()->template("frontend")->sortBy('sort', 'asc')->first() ?>
 					<?php $panels = $p->images()->template("backend")->sortBy('sort', 'asc') ?>
 					<a class="frontend" href="<?= $panels->first()->url() ?>">
-						<?= $frontend->crop(800, 600, "top") ?>
+						<img class="lazy" data-src="<?= $frontend->crop(800, 600, "top")->url() ?>" alt="<?= $p->title() ?>">
 					</a>
 					<div class="backend">
-						<?= $panels->first()->crop(800, 600, "top") ?>
+						<img class="lazy" data-src="<?= $panels->first()->resize(800)->url() ?>" alt="<?= $p->title() ?> – Backend">
 						<?php foreach($panels as $panel): ?>
-							<img loading="lazy" class="popup" src="<?= $panel->url() ?>" data-size="<?= $panel->width() ?>x<?= $panel->height() ?>">
+							<img class="popup" data-src="<?= $panel->url() ?>" data-size="<?= $panel->width() ?>x<?= $panel->height() ?>">
 						<?php endforeach ?>
 					</div>
 				</div>

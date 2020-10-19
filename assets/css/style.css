@@ -15,13 +15,10 @@ a {
   font-size: .8rem; }
 
 header {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin-bottom: 4rem; }
   header a {
-    -webkit-transition: all .25s ease-in-out;
     transition: all .25s ease-in-out; }
     header a.submit {
       display: block;
@@ -32,17 +29,13 @@ header {
         margin-right: 5px;
         position: relative;
         top: 2px;
-        -webkit-transition: -webkit-transform .25s ease-in-out;
-        transition: -webkit-transform .25s ease-in-out;
-        transition: transform .25s ease-in-out;
-        transition: transform .25s ease-in-out, -webkit-transform .25s ease-in-out; }
+        transition: transform .25s ease-in-out; }
         header a.submit svg path {
           stroke: currentColor; }
       header a.submit:hover {
         color: white; }
         header a.submit:hover svg {
-          -webkit-transform: rotate(90deg);
-                  transform: rotate(90deg); }
+          transform: rotate(90deg); }
 
 main.text {
   font-size: .8rem;
@@ -57,118 +50,136 @@ main.text {
 .websites {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 4rem; }
-  .websites .website .screenshot {
-    position: relative;
-    cursor: pointer;
-    -webkit-transform: translate3d(0px, 0px, 0px);
-            transform: translate3d(0px, 0px, 0px); }
-    .websites .website .screenshot .front_back {
-      -webkit-transition: all .25s ease-in-out;
-      transition: all .25s ease-in-out;
-      -webkit-transform-style: preserve-3d;
-              transform-style: preserve-3d;
-      -webkit-transform: perspective(1000px);
-              transform: perspective(1000px); }
-      .websites .website .screenshot .front_back .frontend {
-        display: block;
-        position: relative;
-        -webkit-backface-visibility: hidden;
-                backface-visibility: hidden; }
-      .websites .website .screenshot .front_back .backend {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        -webkit-transform: rotateY(180deg);
-                transform: rotateY(180deg);
-        -webkit-backface-visibility: hidden;
-                backface-visibility: hidden; }
-      .websites .website .screenshot .front_back img {
-        display: block;
-        width: 100%;
-        border-radius: 2px; }
-        .websites .website .screenshot .front_back img.popup {
-          display: none; }
-    .websites .website .screenshot:hover .front_back {
-      -webkit-transform: perspective(1000px) rotateY(-10deg) rotateX(-10deg);
-              transform: perspective(1000px) rotateY(-10deg) rotateX(-10deg); }
-    .websites .website .screenshot:hover + .title a.frontend:after {
-      opacity: .33; }
-    .websites .website .screenshot:active .front_back {
-      -webkit-transition: all .1s ease-in-out;
-      transition: all .1s ease-in-out;
-      -webkit-transform: perspective(1000px) rotateY(0deg) rotateX(-15deg) scale(0.95);
-              transform: perspective(1000px) rotateY(0deg) rotateX(-15deg) scale(0.95); }
-    .websites .website .screenshot.backend_open .front_back {
-      -webkit-transform: perspective(1000px) rotateY(-180deg);
-              transform: perspective(1000px) rotateY(-180deg); }
-    .websites .website .screenshot.backend_open + .title a.frontend:after {
-      opacity: 1; }
-  .websites .website .title {
-    margin-top: 1rem;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: justify;
-            justify-content: space-between;
-    font-size: .8rem; }
-    .websites .website .title a {
-      -webkit-user-select: none;
-         -moz-user-select: none;
-          -ms-user-select: none;
-              user-select: none;
-      cursor: pointer; }
-      .websites .website .title a.frontend {
-        border-bottom: 2px solid transparent;
-        -webkit-transition: all .25s ease-in-out;
-        transition: all .25s ease-in-out; }
-        .websites .website .title a.frontend:after {
-          content: '/panel';
-          opacity: 0;
-          -webkit-transition: all .25s ease-in-out;
-          transition: all .25s ease-in-out;
-          margin-left: 1px;
-          position: absolute; }
-        .websites .website .title a.frontend:hover {
-          border-color: currentColor; }
-      .websites .website .title a.backend {
-        margin-left: 2px;
-        color: rgba(255, 255, 255, 0.5); }
-      .websites .website .title a.heart {
-        color: rgba(255, 255, 255, 0.5);
-        -webkit-transition: all .25s ease-in-out;
-        transition: all .25s ease-in-out; }
-        .websites .website .title a.heart svg {
-          display: inline-block;
-          vertical-align: middle;
+  grid-gap: 2rem;
+  margin: -1rem; }
+  .websites .website {
+    padding: 1rem; }
+    .websites .website .screenshot {
+      position: relative;
+      cursor: url("../images/eye.svg") 25 25, auto; }
+      .websites .website .screenshot .front_back {
+        transition: all .25s ease-in-out;
+        transform-style: preserve-3d;
+        transform: perspective(1000px); }
+        .websites .website .screenshot .front_back .frontend {
+          display: block;
           position: relative;
-          top: -2px;
-          overflow: visible;
-          margin-left: 5px; }
-          .websites .website .title a.heart svg circle {
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 2px; }
-          .websites .website .title a.heart svg path {
-            fill: currentColor; }
-        .websites .website .title a.heart:hover {
-          color: white; }
-        .websites .website .title a.heart.has_liked {
-          color: white; }
-          .websites .website .title a.heart.has_liked svg circle {
-            fill: currentColor; }
-          .websites .website .title a.heart.has_liked svg path {
-            fill: black; }
+          height: 0;
+          padding-bottom: 75%;
+          cursor: inherit;
+          -webkit-backface-visibility: hidden;
+                  backface-visibility: hidden;
+          border-radius: 2px;
+          overflow: hidden; }
+          .websites .website .screenshot .front_back .frontend:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(20deg, black 0%, rgba(0, 0, 0, 0) 66%);
+            opacity: 0;
+            transition: all .25s ease-in-out;
+            -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+            pointer-events: none; }
+        .websites .website .screenshot .front_back .backend {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          transform: rotateY(180deg);
+          transform-style: preserve-3d;
+          -webkit-backface-visibility: hidden;
+                  backface-visibility: hidden;
+          background-color: #efefef;
+          border-radius: 2px;
+          overflow: hidden; }
+        .websites .website .screenshot .front_back img {
+          display: block;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          -webkit-backface-visibility: hidden;
+                  backface-visibility: hidden;
+          opacity: 0; }
+          .websites .website .screenshot .front_back img.loaded {
+            opacity: 1; }
+          .websites .website .screenshot .front_back img.popup {
+            display: none; }
+      .websites .website .screenshot:hover .front_back {
+        transform: perspective(1000px) rotateY(-10deg) rotateX(-10deg); }
+        .websites .website .screenshot:hover .front_back .frontend:after {
+          opacity: .5; }
+      .websites .website .screenshot:hover + .title a.frontend:after {
+        opacity: .33; }
+      .websites .website .screenshot:active .front_back {
+        transition: all .1s ease-in-out;
+        transform: perspective(1000px) rotateY(0deg) rotateX(-15deg) scale(0.95); }
+      .websites .website .screenshot.backend_open .front_back {
+        transform: perspective(1000px) rotateY(-180deg); }
+      .websites .website .screenshot.backend_open + .title a.frontend:after {
+        opacity: 1; }
+    .websites .website .title {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: .8rem; }
+      .websites .website .title a {
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+        cursor: pointer; }
+        .websites .website .title a.frontend {
+          border-bottom: 2px solid transparent;
+          transition: all .25s ease-in-out; }
+          .websites .website .title a.frontend:after {
+            content: '/panel';
+            opacity: 0;
+            transition: all .25s ease-in-out;
+            margin-left: 1px;
+            position: absolute; }
+          .websites .website .title a.frontend:hover {
+            border-color: currentColor; }
+        .websites .website .title a.backend {
+          margin-left: 2px;
+          color: rgba(255, 255, 255, 0.5); }
+        .websites .website .title a.heart {
+          color: rgba(255, 255, 255, 0.5);
+          transition: all .25s ease-in-out; }
+          .websites .website .title a.heart svg {
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            top: -2px;
+            overflow: visible;
+            margin-left: 6px; }
+            .websites .website .title a.heart svg circle {
+              fill: none;
+              stroke: currentColor;
+              stroke-width: 2px; }
+            .websites .website .title a.heart svg path {
+              fill: currentColor; }
+          .websites .website .title a.heart:hover {
+            color: white; }
+          .websites .website .title a.heart.has_liked {
+            color: white; }
+            .websites .website .title a.heart.has_liked svg circle {
+              fill: currentColor; }
+            .websites .website .title a.heart.has_liked svg path {
+              fill: black; }
 
 footer {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin-top: 4rem;
   color: rgba(255, 255, 255, 0.5); }
   footer a {
-    -webkit-transition: all .25s ease-in-out;
     transition: all .25s ease-in-out; }
     footer a:hover, footer a.open {
       color: white; }
@@ -183,7 +194,7 @@ footer {
   body {
     margin: 2rem; }
   .websites {
-    grid-gap: 2rem; } }
+    grid-gap: 0; } }
 
 @media screen and (max-width: 1050px) {
   .websites {

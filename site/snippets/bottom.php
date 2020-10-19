@@ -3,6 +3,7 @@
 <?= js(array(
     'assets/photoswipe/photoswipe.min.js',
     'assets/photoswipe/photoswipe-ui-default.min.js',
+    'assets/js/lazyload.min.js',
     'assets/js/f.js'
 )) ?>
 
