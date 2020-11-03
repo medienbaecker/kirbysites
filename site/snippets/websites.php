@@ -1,14 +1,5 @@
 <main class="websites">
 
-	<?php
-		$websites = $pages->listed();
-		if(param("sort") == "likes") {
-			$websites = $websites->sortBy(function($page) {
-				return $page->likeCount();
-			}, 'desc');
-		}
-	?>
-
 	<?php foreach($websites as $p): ?>
 		<div class="website" id="<?= $p->uid() ?>">
 

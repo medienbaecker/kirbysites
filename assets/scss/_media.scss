@@ -1,7 +1,7 @@
-@media screen and (max-width: 1600px) { 
+@media screen and (max-width: 1600px) {
 	.websites {
 		grid-template-columns: 1fr 1fr;
-	} 
+	}
 }
 
 @media screen and (max-width: 1200px) {
@@ -24,9 +24,9 @@
 		font-size: 15px;
 	}
 	header {
-		a.submit svg {
+		a.sort svg {
 			width: 15px;
-			top: -3px;
+			top: 1px;
 		}
 	}
 	.websites {
@@ -34,7 +34,7 @@
 			.title {
 				a.frontend {
 					border-width: 1px;
-				} 
+				}
 				a.heart {
 					svg {
 						width: 16px;
@@ -44,5 +44,5 @@
 				}
 			}
 		}
-	} 
+	}
 }

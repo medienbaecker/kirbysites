@@ -24,26 +24,23 @@ header {
     margin-bottom: 4rem;
     a {
         transition: all .25s ease-in-out;
+        opacity: .5;
+        &.logo {
+          margin-right: auto;
+          opacity: 1;
+        }
         &.submit {
-            display: block;
-            color: darken(white, 50);
-            svg {
-                display: inline-block;
-                vertical-align: top;
-                margin-right: 5px;
-                position: relative;
-                top: 2px;
-                transition: transform .25s ease-in-out;
-                path {
-                    stroke: currentColor;
-                }
-            }
-            &:hover {
-                color: white;
-                svg {
-                    transform: rotate(90deg);
-                }
-            }
+          margin-left: 1rem;
+        }
+        &:hover {
+          opacity: 1;
+        }
+        svg {
+          width: 24px;
+          display: inline-block;
+          vertical-align: top;
+          position: relative;
+          top: 2px;
         }
     }
 }
@@ -219,7 +216,7 @@ main.text {
                         svg {
                            circle {
                                fill: currentColor;
-                           } 
+                           }
                            path {
                                fill: black;
                            }

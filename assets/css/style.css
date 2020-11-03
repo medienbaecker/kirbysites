@@ -19,23 +19,21 @@ header {
   justify-content: space-between;
   margin-bottom: 4rem; }
   header a {
-    transition: all .25s ease-in-out; }
+    transition: all .25s ease-in-out;
+    opacity: .5; }
+    header a.logo {
+      margin-right: auto;
+      opacity: 1; }
     header a.submit {
-      display: block;
-      color: gray; }
-      header a.submit svg {
-        display: inline-block;
-        vertical-align: top;
-        margin-right: 5px;
-        position: relative;
-        top: 2px;
-        transition: transform .25s ease-in-out; }
-        header a.submit svg path {
-          stroke: currentColor; }
-      header a.submit:hover {
-        color: white; }
-        header a.submit:hover svg {
-          transform: rotate(90deg); }
+      margin-left: 1rem; }
+    header a:hover {
+      opacity: 1; }
+    header a svg {
+      width: 24px;
+      display: inline-block;
+      vertical-align: top;
+      position: relative;
+      top: 2px; }
 
 main.text {
   font-size: .8rem;
@@ -203,9 +201,9 @@ footer {
 @media screen and (max-width: 640px) {
   html {
     font-size: 15px; }
-  header a.submit svg {
+  header a.sort svg {
     width: 15px;
-    top: -3px; }
+    top: 1px; }
   .websites .website .title a.frontend {
     border-width: 1px; }
   .websites .website .title a.heart svg {
