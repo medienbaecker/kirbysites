@@ -1,5 +1,0 @@
-Title: Kirbysites
-
-----
-
-Description: Inspiration doesn't stop at the frontend. Kirbysites invites you to have a look behind the scenes of beautiful websites built with the Kirby CMS.
